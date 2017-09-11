@@ -1,0 +1,25 @@
+{
+  "name": "node-api-rest",
+  "version": "1.0.0",
+  "description": "demo api rest using express",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmtp/node-rest-api.git"
+  },
+  "keywords": [
+    "express",
+    "sequelize",
+    "node",
+    "rest"
+  ],
+  "author": "ctola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmtp/node-rest-api/issues"
+  },
+  "homepage": "https://github.com/cmtp/node-rest-api#readme"
+}
