@@ -29,7 +29,7 @@ module.exports = (sequelize, DataType) => {
         }
     }, {
         classMethods: {
-            associate: (models) => {
+            associate: models => {
                 Users.hasMany(models.Tasks);
             }
         }

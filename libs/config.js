@@ -1,7 +1,7 @@
 module.exports = {
     database: 'todo-app',
     username: 'root',
-    password: '',
+    password: 'root',
     params: {
         dialect: 'mysql',
         define: {

@@ -21,13 +21,13 @@ module.exports = app => {
         const dir = path.join(__dirname, 'models');
         fs.readdirSync(dir).forEach(file => {
             const modelDir = path.join(dir, file);
-            // TODO: we need to review problem in this line
             const model = sequelize.import(modelDir);
             db.models[model.name] = model;
         });
-        Object.keys(db.models).forEach(key => {
-            db.models[key].associate(db.models);
-        });
+        // Object.keys(db.models).forEach(key => {
+        //     console.log(key);
+        //     db.models[key].associate(db.models);
+        // });
     }
     return db;
 }

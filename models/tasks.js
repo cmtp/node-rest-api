@@ -5,7 +5,7 @@ module.exports = (sequelize, DataType) => {
             primaryKey: true,
         },
         title: {
-            type: DataTYpe.STRING,
+            type: DataType.STRING,
             allowNull: false,
             validate: {
                 notEmpty: true
