@@ -2,12 +2,6 @@ module.exports = app => {
     const Tasks = app.db.models.Tasks;
 
     app.route('/tasks')
-        .all((req, res, next) => {
-            if (req.body && req.body.id) {
-                delete req.body.id;
-            }
-            next();
-        })
         .get((req, res) => {
             Tasks.findAll({})
                 .then(result => res.json(result))
@@ -24,10 +18,6 @@ module.exports = app => {
         });
     
     app.route('/tasks/:id')
-        .all((req, res, next) => {
-            delete req.body.id;
-            next();
-        })
         .get((req, res) => {
             Tasks.findOne({where: req.params})
                 .then(result => {
