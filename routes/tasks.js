@@ -3,10 +3,12 @@ module.exports = app => {
 
     app.route('/tasks')
         .all((req, res, next) => {
-            delete req.body.id;
+            if (req.body && req.body.id) {
+                delete req.body.id;
+            }
             next();
         })
-        .get('/tasks', (req, res) => {
+        .get((req, res) => {
             Tasks.findAll({})
                 .then(result => res.json(result))
                 .catch(error => {
