@@ -1,0 +1,88 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Node Rest API",
+      "description": "Node Rest API with express and es6",
+      "termsOfService": ""
+    },
+    "basePath": "/",
+    "tags" : [
+      {"name": "Token", 
+      "description": "API for Login into the API REst"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/token": {
+         "post": {
+            "tags": ["Login"],
+            "description": "Login to the rest api",
+            "operationId": "Login",
+            "produces": [
+              "application/json"
+            ],
+            "parameters": [
+              {
+                "name": "Login Parameters",
+                "in": "body",
+                "description": "email and password for the user",
+                "required": true,
+                "schema": {
+                  "$ref": "#/definitions/login"
+                  }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "token of autorization",
+                "schema": {
+                   "$ref": "#/definitions/response"
+                }
+              }
+            }
+          }
+      }
+    },
+    "definitions": {
+      "login": {
+        "properties": {
+          "email": {
+            "required":true,
+            "type": "string",
+            "example": "admin@example.com"
+          },
+          "password": {
+            "required":true,
+            "type":"string",
+            "example": "admin123"
+          } 
+        }
+      },
+      "response": {
+          "properties": {
+              "token": {
+                "required": true,
+                "type" : "string",
+                "example" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.JcmcQ7B4Cyu38aXl0YPfy5UwS6ViRfRJVW3j9fHBSzs"
+              }
+          }
+      },
+      "401error" : {
+         "properties": {
+          "message": {
+            "type": "string",
+            "example" : "Unauthorized"
+          }
+        }
+      }
+    }
+  }
